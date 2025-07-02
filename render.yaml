@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: tracksphere
+    env: java
+    buildCommand: "./mvnw clean install"
+    startCommand: "java -jar target/*.jar"
+    envVars:
+      - key: SPRING_DATA_MONGODB_URI
+        value: mongodb+srv://trackuser:track1234@spring-cluster.XXXXX.mongodb.net/tracksphere?retryWrites=true&w=majority
+      - key: PORT
+        value: 8080
